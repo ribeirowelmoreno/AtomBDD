@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190531 14:37:54.706" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
+<suite source="D:\Wellynton\Projetos\Atom\tests\TestSitePractice.robot" id="s1" name="TestSitePractice">
+<test id="s1-t1" name="Test Case 1: Search an existant product">
+<kw type="setup" name="Open Browser">
+<msg timestamp="20190531 14:37:54.759" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" endtime="20190531 14:37:54.759" starttime="20190531 14:37:54.759"></status>
+</kw>
+<kw type="teardown" name="Close Browser">
+<msg timestamp="20190531 14:37:54.762" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" endtime="20190531 14:37:54.762" starttime="20190531 14:37:54.762">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" endtime="20190531 14:37:54.762" critical="yes" starttime="20190531 14:37:54.756">Setup failed:
+No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<test id="s1-t2" name="Test Case 2: Search an non existant product">
+<kw type="setup" name="Open Browser">
+<msg timestamp="20190531 14:37:54.766" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" endtime="20190531 14:37:54.766" starttime="20190531 14:37:54.766"></status>
+</kw>
+<kw type="teardown" name="Close Browser">
+<msg timestamp="20190531 14:37:54.768" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" endtime="20190531 14:37:54.769" starttime="20190531 14:37:54.768">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" endtime="20190531 14:37:54.769" critical="yes" starttime="20190531 14:37:54.764">Setup failed:
+No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<status status="FAIL" endtime="20190531 14:37:54.771" starttime="20190531 14:37:54.709"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="TestSitePractice" pass="0">TestSitePractice</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190531 14:37:54.753" level="WARN">Imported resource file 'D:\Wellynton\Projetos\Atom\resource\Resource.robot' is empty.</msg>
+</errors>
+</robot>
