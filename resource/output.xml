@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190605 11:16:16.288" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
+<suite source="D:\Wellynton\Projetos\Atom\tests\TestSitePractice.robot" id="s1" name="TestSitePractice">
+<test id="s1-t1" name="Test Case 1: Search an existant product">
+<kw type="setup" name="Open Browser" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190605 11:16:16.617" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20190605 11:16:21.284" starttime="20190605 11:16:16.617"></status>
+</kw>
+<status status="PASS" endtime="20190605 11:16:21.284" starttime="20190605 11:16:16.617"></status>
+</kw>
+<kw name="Access home page" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://automationpractice.com</arg>
+</arguments>
+<msg timestamp="20190605 11:16:21.285" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" endtime="20190605 11:16:28.500" starttime="20190605 11:16:21.285"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20190605 11:16:28.506" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20190605 11:16:28.506" starttime="20190605 11:16:28.500"></status>
+</kw>
+<status status="PASS" endtime="20190605 11:16:28.507" starttime="20190605 11:16:21.285"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190605 11:16:30.298" starttime="20190605 11:16:28.508"></status>
+</kw>
+<status status="PASS" endtime="20190605 11:16:30.299" starttime="20190605 11:16:28.507"></status>
+</kw>
+<status status="PASS" endtime="20190605 11:16:30.299" critical="yes" starttime="20190605 11:16:16.616"></status>
+</test>
+<status status="PASS" endtime="20190605 11:16:30.301" starttime="20190605 11:16:16.290"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestSitePractice" pass="1">TestSitePractice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
