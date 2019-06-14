@@ -17,5 +17,9 @@ Test Case 2: Search an non existant product
   Click on the search button
   Check error message "No results were found for your search "nonExitentItem"" was displayed
 
+Scenario 3: Pass the mouse on "Women" category on main menu
+  Since I'm in the home page
+  When I pass the mouse on the "Women" category
+  Click in the "Summer Dresses" sub-category
 
 # *** Keywords ***
