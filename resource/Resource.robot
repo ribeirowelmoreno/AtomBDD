@@ -64,10 +64,17 @@ Click on "sign in" button
   Wait Until Element Is Visible         xpath=//*[@id="header"]/div[2]//a[@class="login"]
   Click Element                         xpath=//*[@id="header"]/div[2]//a[@class="login"]
 
+Create a random e-mail
+  [Arguments]           ${NAME}     ${LAST_NAME}
+  ${RANDOM_STRING}      Generate Random String
+  ${CUSTOM_EMAIL}       Set Variable  ${NAME}${LAST_NAME}${RANDOM_STRING}@testrobot.com
+  Log                   ${CUSTOM_EMAIL}
+  [Return]              ${CUSTOM_EMAIL}
+
 Insert a valid e-mail
-  Wait Until Element Is Visible         id=email_create
-  ${EMAIL}                              Generate Random String
-  Input Text                            id=email_create    ${EMAIL}@testrobot.com
+  Wait Until Element Is Visible          id=email_create
+  ${EMAIL}    Creating a custom e-mail     ${PEOPLES_DATA.first_name}     ${PEOPLES_DATA.last_name}
+  Input Text                             id=email_create    ${EMAIL}
 
 Click on "Create new account" button
   Wait Until Element Is Visible         xpath=//*[@id="SubmitCreate"]

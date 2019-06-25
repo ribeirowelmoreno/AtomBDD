@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20190619 15:57:50.131" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
+<robot rpa="false" generated="20190625 16:13:28.793" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
 <suite source="D:\Wellynton\Projetos\Atom\tests\TestSitePracticeBDD.robot" id="s1" name="TestSitePracticeBDD">
-<test id="s1-t1" name="Scenario 3: Pass the mouse on &quot;Women&quot; category on main menu">
+<test id="s1-t1" name="Scenario 6: Add e new client">
 <kw type="setup" name="Open Browser" library="Resource">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,10 +9,10 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20190619 15:57:50.521" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20190619 15:57:55.271" starttime="20190619 15:57:50.520"></status>
+<msg timestamp="20190625 16:13:29.120" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20190625 16:13:33.656" starttime="20190625 16:13:29.119"></status>
 </kw>
-<status status="PASS" endtime="20190619 15:57:55.271" starttime="20190619 15:57:50.520"></status>
+<status status="PASS" endtime="20190625 16:13:33.656" starttime="20190625 16:13:29.119"></status>
 </kw>
 <kw name="Since I'm in the home page">
 <kw name="Access home page" library="Resource">
@@ -21,115 +21,80 @@
 <arguments>
 <arg>http://automationpractice.com</arg>
 </arguments>
-<msg timestamp="20190619 15:57:55.273" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" endtime="20190619 15:57:59.818" starttime="20190619 15:57:55.272"></status>
+<msg timestamp="20190625 16:13:33.657" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" endtime="20190625 16:13:58.632" starttime="20190625 16:13:33.657"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190619 15:58:00.116" starttime="20190619 15:57:59.818"></status>
+<status status="PASS" endtime="20190625 16:13:58.941" starttime="20190625 16:13:58.632"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20190619 15:58:00.122" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20190619 15:58:00.122" starttime="20190619 15:58:00.117"></status>
+<msg timestamp="20190625 16:13:58.945" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20190625 16:13:58.945" starttime="20190625 16:13:58.941"></status>
 </kw>
-<status status="PASS" endtime="20190619 15:58:00.122" starttime="20190619 15:57:55.272"></status>
+<status status="PASS" endtime="20190625 16:13:58.945" starttime="20190625 16:13:33.656"></status>
 </kw>
-<status status="PASS" endtime="20190619 15:58:00.122" starttime="20190619 15:57:55.271"></status>
+<status status="PASS" endtime="20190625 16:13:58.945" starttime="20190625 16:13:33.656"></status>
 </kw>
-<kw name="When I pass the mouse on the &quot;Women&quot; category">
-<kw name="Mouse over item on the &quot;${CATEGORY_TYPE}&quot;" library="Resource">
+<kw name="Create new account">
+<kw name="Click on &quot;sign in&quot; button" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${CATEGORY_TYPE}"]</arg>
+<arg>xpath=//*[@id="header"]/div[2]//a[@class="login"]</arg>
 </arguments>
-<status status="PASS" endtime="20190619 15:58:00.175" starttime="20190619 15:58:00.123"></status>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${CATEGORY_TYPE}"]</arg>
-</arguments>
-<msg timestamp="20190619 15:58:00.176" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="block_top_menu"]//a[@title="Women"]'.</msg>
-<status status="PASS" endtime="20190619 15:58:00.477" starttime="20190619 15:58:00.175"></status>
-</kw>
-<status status="PASS" endtime="20190619 15:58:00.477" starttime="20190619 15:58:00.123"></status>
-</kw>
-<status status="PASS" endtime="20190619 15:58:00.477" starttime="20190619 15:58:00.123"></status>
-</kw>
-<kw name="Click in the &quot;Summer Dresses&quot; sub-category">
-<kw name="Click in the &quot;${SUB_CATEGORY_TYPE}&quot;" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${SUB_CATEGORY_TYPE}"]</arg>
-</arguments>
-<status status="PASS" endtime="20190619 15:58:00.773" starttime="20190619 15:58:00.479"></status>
+<status status="PASS" endtime="20190625 16:13:58.972" starttime="20190625 16:13:58.946"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${SUB_CATEGORY_TYPE}"]</arg>
+<arg>xpath=//*[@id="header"]/div[2]//a[@class="login"]</arg>
 </arguments>
-<msg timestamp="20190619 15:58:00.774" level="INFO">Clicking element 'xpath=//*[@id="block_top_menu"]//a[@title="Summer Dresses"]'.</msg>
-<status status="PASS" endtime="20190619 15:58:03.616" starttime="20190619 15:58:00.773"></status>
+<msg timestamp="20190625 16:13:58.973" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]//a[@class="login"]'.</msg>
+<status status="PASS" endtime="20190625 16:14:00.871" starttime="20190625 16:13:58.972"></status>
 </kw>
-<status status="PASS" endtime="20190619 15:58:03.616" starttime="20190619 15:58:00.478"></status>
+<status status="PASS" endtime="20190625 16:14:00.871" starttime="20190625 16:13:58.946"></status>
 </kw>
-<kw name="Make sure if all the items are showed in at the screen" library="Resource">
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Insert a valid e-mail" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
-<arg>xpath=//*[@id="center_column"]/h1/span[contains(text(), "${SUMMER_DRESS_PRODUCTS[0]}")]</arg>
+<arg>id=email_create</arg>
 </arguments>
-<msg timestamp="20190619 15:58:03.634" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]/h1/span[contains(text(), "Summer Dresses")]'.</msg>
-<status status="PASS" endtime="20190619 15:58:03.634" starttime="20190619 15:58:03.616"></status>
+<status status="PASS" endtime="20190625 16:14:00.917" starttime="20190625 16:14:00.873"></status>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Creating a custom e-mail">
 <arguments>
-<arg>xpath=//*[@id="center_column"]/ul/li[1]/div/div[2]/h5/a[@title="${SUMMER_DRESS_PRODUCTS[1]}"]</arg>
+<arg>${PEOPLES_DATA.first_name}</arg>
+<arg>${PEOPLES_DATA.last_name}</arg>
 </arguments>
-<msg timestamp="20190619 15:58:03.642" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]/ul/li[1]/div/div[2]/h5/a[@title="Printed Summer Dress"]'.</msg>
-<status status="PASS" endtime="20190619 15:58:03.642" starttime="20190619 15:58:03.634"></status>
+<assign>
+<var>${EMAIL}</var>
+</assign>
+<msg timestamp="20190625 16:14:00.923" level="FAIL">No keyword with name 'Creating a custom e-mail' found.</msg>
+<status status="FAIL" endtime="20190625 16:14:00.923" starttime="20190625 16:14:00.922"></status>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/ul/li[2]/div/div[2]/h5/a[@title="${SUMMER_DRESS_PRODUCTS[2]}"]</arg>
-</arguments>
-<msg timestamp="20190619 15:58:03.651" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]/ul/li[2]/div/div[2]/h5/a[@title="Printed Summer Dress"]'.</msg>
-<status status="PASS" endtime="20190619 15:58:03.651" starttime="20190619 15:58:03.642"></status>
+<status status="FAIL" endtime="20190625 16:14:00.923" starttime="20190625 16:14:00.872"></status>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/ul/li[3]/div/div[2]/h5/a[@title="${SUMMER_DRESS_PRODUCTS[3]}"]</arg>
-</arguments>
-<msg timestamp="20190619 15:58:03.657" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]/ul/li[3]/div/div[2]/h5/a[@title="Printed Chiffon Dress"]'.</msg>
-<status status="PASS" endtime="20190619 15:58:03.657" starttime="20190619 15:58:03.651"></status>
+<status status="FAIL" endtime="20190625 16:14:00.923" starttime="20190625 16:13:58.946"></status>
 </kw>
-<status status="PASS" endtime="20190619 15:58:03.657" starttime="20190619 15:58:03.616"></status>
-</kw>
-<status status="PASS" endtime="20190619 15:58:03.657" starttime="20190619 15:58:00.477"></status>
-</kw>
-<status status="PASS" endtime="20190619 15:58:03.658" critical="yes" starttime="20190619 15:57:50.518"></status>
+<status status="FAIL" endtime="20190625 16:14:00.924" critical="yes" starttime="20190625 16:13:29.119">No keyword with name 'Creating a custom e-mail' found.</status>
 </test>
-<status status="PASS" endtime="20190619 15:58:03.661" starttime="20190619 15:57:50.135"></status>
+<status status="FAIL" endtime="20190625 16:14:00.927" starttime="20190625 16:13:28.796"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="TestSitePracticeBDD" pass="1">TestSitePracticeBDD</stat>
+<stat fail="1" id="s1" name="TestSitePracticeBDD" pass="0">TestSitePracticeBDD</stat>
 </suite>
 </statistics>
 <errors>

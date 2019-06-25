@@ -1,7 +1,8 @@
 *** Settings ***
 Resource          ../resource/Resource.robot
-Test Setup       Open Browser
-# Test Teardown    Close Browser
+Test Setup        Open Browser
+# Test Teardown     Close Browser
+Library           String
 
 # SETUP run keyword before an suite or Test
 # TEARDOWN run keyword after an suite or Test
@@ -20,12 +21,12 @@ ${BROWSER}    firefox
 #   Since I'm in the home page
 #   When I search for "nonExitentItem" product
 #   Then the page should show the "No results were found for your search "nonExitentItem"" error message
-
-Scenario 3: Pass the mouse on "Women" category on main menu
-  Since I'm in the home page
-  When I pass the mouse on the "Women" category
-  Click in the "Summer Dresses" sub-category
-
+#
+# Scenario 3: Pass the mouse on "Women" category on main menu
+#   Since I'm in the home page
+#   When I pass the mouse on the "Women" category
+#   Click in the "Summer Dresses" sub-category
+#
 # Scenario 4: Add product to cart
 #   Since I'm in the home page
 #   When I search for "t-shirt" product
@@ -36,12 +37,12 @@ Scenario 3: Pass the mouse on "Women" category on main menu
 #   When I search for "t-shirt" product
 #   Add product to cart
 #   Delete an product
-#
-# Scenario 6: Add e new client
-#   Since I'm in the home page
-#   Create new account
-#   Submit register
-#   Make sure if the register was successfully done
+
+Scenario 6: Add e new client
+  Since I'm in the home page
+  Create new account
+  Submit register
+  Make sure if the register was successfully done
 
 
 *** Keywords ***
@@ -83,3 +84,10 @@ Submit register
 
 Make sure if the register was successfully done
   Check if the successfull message is displayed
+
+# Create a random e-mail
+#  [Arguments]              ${NAME}   ${LAST_NAME}
+#  ${RANDOM_STRING}         Generate Random String
+#  ${CUSTOM_EMAIL}          Set Variable    ${NAME}${LAST_NAME}${RANDOM_STRING}@testrobot.com
+#  Log                      ${CUSTOM_EMAIL}
+#  [Return]                 ${CUSTOM_EMAIL}
