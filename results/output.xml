@@ -1,102 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20190625 16:13:28.793" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
-<suite source="D:\Wellynton\Projetos\Atom\tests\TestSitePracticeBDD.robot" id="s1" name="TestSitePracticeBDD">
-<test id="s1-t1" name="Scenario 6: Add e new client">
-<kw type="setup" name="Open Browser" library="Resource">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
+<robot rpa="false" generated="20190626 14:21:38.961" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
+<suite source="D:\Wellynton\Projetos\Atom\tests\UsandoIFs.robot" id="s1" name="UsandoIFs">
+<test id="s1-t1" name="Test case first example">
+<kw name="Running a keyword with a condition = true">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
+<arg>'${FRUTAS[1]}' == 'Banana'</arg>
+<arg>Log</arg>
+<arg>The first item is a banana!</arg>
 </arguments>
-<msg timestamp="20190625 16:13:29.120" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20190625 16:13:33.656" starttime="20190625 16:13:29.119"></status>
-</kw>
-<status status="PASS" endtime="20190625 16:13:33.656" starttime="20190625 16:13:29.119"></status>
-</kw>
-<kw name="Since I'm in the home page">
-<kw name="Access home page" library="Resource">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>http://automationpractice.com</arg>
+<arg>The first item is a banana!</arg>
 </arguments>
-<msg timestamp="20190625 16:13:33.657" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" endtime="20190625 16:13:58.632" starttime="20190625 16:13:33.657"></status>
+<msg timestamp="20190626 14:21:38.990" level="INFO">The first item is a banana!</msg>
+<status status="PASS" endtime="20190626 14:21:38.990" starttime="20190626 14:21:38.990"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190625 16:13:58.941" starttime="20190625 16:13:58.632"></status>
+<status status="PASS" endtime="20190626 14:21:38.990" starttime="20190626 14:21:38.989"></status>
 </kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that current page title equals ``title``.</doc>
+<status status="PASS" endtime="20190626 14:21:38.990" starttime="20190626 14:21:38.989"></status>
+</kw>
+<kw name="Running a keyword with a condition = false">
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
 <arguments>
-<arg>My Store</arg>
+<arg>'${FRUTAS[1]}' == 'Maça'</arg>
+<arg>Log</arg>
+<arg>The first item is not a maça!</arg>
 </arguments>
-<msg timestamp="20190625 16:13:58.945" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20190625 16:13:58.945" starttime="20190625 16:13:58.941"></status>
-</kw>
-<status status="PASS" endtime="20190625 16:13:58.945" starttime="20190625 16:13:33.656"></status>
-</kw>
-<status status="PASS" endtime="20190625 16:13:58.945" starttime="20190625 16:13:33.656"></status>
-</kw>
-<kw name="Create new account">
-<kw name="Click on &quot;sign in&quot; button" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>xpath=//*[@id="header"]/div[2]//a[@class="login"]</arg>
+<arg>The first item is not a maça!</arg>
 </arguments>
-<status status="PASS" endtime="20190625 16:13:58.972" starttime="20190625 16:13:58.946"></status>
+<msg timestamp="20190626 14:21:38.991" level="INFO">The first item is not a maça!</msg>
+<status status="PASS" endtime="20190626 14:21:38.991" starttime="20190626 14:21:38.991"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
+<status status="PASS" endtime="20190626 14:21:38.991" starttime="20190626 14:21:38.991"></status>
+</kw>
+<status status="PASS" endtime="20190626 14:21:38.991" starttime="20190626 14:21:38.990"></status>
+</kw>
+<kw name="Storing a value in a variable given a condition">
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
 <arguments>
-<arg>xpath=//*[@id="header"]/div[2]//a[@class="login"]</arg>
-</arguments>
-<msg timestamp="20190625 16:13:58.973" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]//a[@class="login"]'.</msg>
-<status status="PASS" endtime="20190625 16:14:00.871" starttime="20190625 16:13:58.972"></status>
-</kw>
-<status status="PASS" endtime="20190625 16:14:00.871" starttime="20190625 16:13:58.946"></status>
-</kw>
-<kw name="Insert a valid e-mail" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=email_create</arg>
-</arguments>
-<status status="PASS" endtime="20190625 16:14:00.917" starttime="20190625 16:14:00.873"></status>
-</kw>
-<kw name="Creating a custom e-mail">
-<arguments>
-<arg>${PEOPLES_DATA.first_name}</arg>
-<arg>${PEOPLES_DATA.last_name}</arg>
+<arg>'${FRUTAS[2]}' == 'Uva'</arg>
+<arg>Uva</arg>
 </arguments>
 <assign>
-<var>${EMAIL}</var>
+<var>${VAR}</var>
 </assign>
-<msg timestamp="20190625 16:14:00.923" level="FAIL">No keyword with name 'Creating a custom e-mail' found.</msg>
-<status status="FAIL" endtime="20190625 16:14:00.923" starttime="20190625 16:14:00.922"></status>
+<msg timestamp="20190626 14:21:38.992" level="INFO">${VAR} = Uva</msg>
+<status status="PASS" endtime="20190626 14:21:38.992" starttime="20190626 14:21:38.992"></status>
 </kw>
-<status status="FAIL" endtime="20190625 16:14:00.923" starttime="20190625 16:14:00.872"></status>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Mine variable VAR is a ${VAR}!!</arg>
+</arguments>
+<msg timestamp="20190626 14:21:38.993" level="INFO">Mine variable VAR is a Uva!!</msg>
+<status status="PASS" endtime="20190626 14:21:38.993" starttime="20190626 14:21:38.992"></status>
 </kw>
-<status status="FAIL" endtime="20190625 16:14:00.923" starttime="20190625 16:13:58.946"></status>
+<status status="PASS" endtime="20190626 14:21:38.993" starttime="20190626 14:21:38.992"></status>
 </kw>
-<status status="FAIL" endtime="20190625 16:14:00.924" critical="yes" starttime="20190625 16:13:29.119">No keyword with name 'Creating a custom e-mail' found.</status>
+<status status="PASS" endtime="20190626 14:21:38.993" critical="yes" starttime="20190626 14:21:38.987"></status>
 </test>
-<status status="FAIL" endtime="20190625 16:14:00.927" starttime="20190625 16:13:28.796"></status>
+<doc>Suit to exemplify the IFs using on the tests</doc>
+<status status="PASS" endtime="20190626 14:21:38.995" starttime="20190626 14:21:38.963"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="TestSitePracticeBDD" pass="0">TestSitePracticeBDD</stat>
+<stat fail="0" id="s1" name="UsandoIFs" pass="1">UsandoIFs</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20190626 14:21:38.955" level="ERROR">Error in file 'D:\Wellynton\Projetos\Atom\tests\UsandoIFs.robot': Non-existing setting ''.</msg>
 </errors>
 </robot>

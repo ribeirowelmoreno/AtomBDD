@@ -72,9 +72,9 @@ Create a random e-mail
   [Return]              ${CUSTOM_EMAIL}
 
 Insert a valid e-mail
-  Wait Until Element Is Visible          id=email_create
-  ${EMAIL}    Creating a custom e-mail     ${PEOPLES_DATA.first_name}     ${PEOPLES_DATA.last_name}
-  Input Text                             id=email_create    ${EMAIL}
+  Wait Until Element Is Visible            id=email_create
+  ${EMAIL}    Create a random e-mail     ${PEOPLES_DATA.first_name}     ${PEOPLES_DATA.last_name}
+  Input Text                               id=email_create    ${EMAIL}
 
 Click on "Create new account" button
   Wait Until Element Is Visible         xpath=//*[@id="SubmitCreate"]

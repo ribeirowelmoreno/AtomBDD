@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../resource/Resource.robot
 Test Setup        Open Browser
-# Test Teardown     Close Browser
+Test Teardown     Close Browser
 Library           String
 
 # SETUP run keyword before an suite or Test
