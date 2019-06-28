@@ -66,3 +66,6 @@ Check if all 15's book data is returned correctly
   Should Not Be Empty               ${ANSWER.json()["Description"]}
   Should Not Be Empty               ${ANSWER.json()["PublishDate"]}
   Should Not Be Empty               ${ANSWER.json()["Excerpt"]}
+
+Check if all the book's data are returned correctly
+  Dictionary Should Contain Item    ${ANSWER.json()}    data    value
