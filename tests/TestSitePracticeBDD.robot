@@ -12,31 +12,31 @@ ${URL}        http://automationpractice.com
 ${BROWSER}    firefox
 
 *** Test Cases ***
-# Scenario 1: Search an existant product
-#   Since I'm in the home page
-#   When I search for "Blouse" product
-#   Then the "Blouse" product should be listed in the webpage results
-#
-# Scenario 2: Search an non existant product
-#   Since I'm in the home page
-#   When I search for "nonExitentItem" product
-#   Then the page should show the "No results were found for your search "nonExitentItem"" error message
-#
-# Scenario 3: Pass the mouse on "Women" category on main menu
-#   Since I'm in the home page
-#   When I pass the mouse on the "Women" category
-#   Click in the "Summer Dresses" sub-category
-#
-# Scenario 4: Add product to cart
-#   Since I'm in the home page
-#   When I search for "t-shirt" product
-#   Add product to cart
-#
-# Scenario 5: Removing products from cart
-#   Since I'm in the home page
-#   When I search for "t-shirt" product
-#   Add product to cart
-#   Delete an product
+Scenario 1: Search an existant product
+  Since I'm in the home page
+  When I search for "Blouse" product
+  Then the "Blouse" product should be listed in the webpage results
+
+Scenario 2: Search an non existant product
+  Since I'm in the home page
+  When I search for "nonExitentItem" product
+  Then the page should show the "No results were found for your search "nonExitentItem"" error message
+
+Scenario 3: Pass the mouse on "Women" category on main menu
+  Since I'm in the home page
+  When I pass the mouse on the "Women" category
+  Click in the "Summer Dresses" sub-category
+
+Scenario 4: Add product to cart
+  Since I'm in the home page
+  When I search for "t-shirt" product
+  Add product to cart
+
+Scenario 5: Removing products from cart
+  Since I'm in the home page
+  When I search for "t-shirt" product
+  Add product to cart
+  Delete an product
 
 Scenario 6: Add e new client
   Since I'm in the home page

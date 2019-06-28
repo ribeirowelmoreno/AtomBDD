@@ -14,6 +14,7 @@ Test case first example
 
 ***Keywords***
 Running a keyword with a condition = true
+  #Se for comparação entre duas strings, deve colocar aspas simples, se for comparação numérica, não é necessário
   Run Keyword If    '${FRUTAS[1]}' == 'Banana'      Log    The first item is a banana!
 
 Running a keyword with a condition = false
