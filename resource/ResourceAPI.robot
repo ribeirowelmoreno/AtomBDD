@@ -9,6 +9,19 @@ ${URL_API}          https://fakerestapi.azurewebsites.net/api/
 &{BOOK_15}          ID=15
 ...                 Title=Book 15
 ...                 PageCount=1500
+&{BOOK_201}         ID=201
+...                 Title=New Book
+...                 PageCount=500
+...                 Description=My Book
+...                 Excerpt=My book is the better
+...                 PublishDate=2018-06-26T18:00:17.765Z
+&{BOOK_150}         ID=150
+...                 Title=Book 150
+...                 PageCount=600
+...                 Description=Test
+...                 PageCount=600
+...                 Excerpt=Test
+...                 PublishDate=2019-07-01T12:28:13.339Z
 
 #Tres pontos serve para dar continuidade na declaração dentro da variável, como se tudo estivesse na mesma linha
 
@@ -17,6 +30,8 @@ ${URL_API}          https://fakerestapi.azurewebsites.net/api/
 ###SETUP AND TEARDOWNS
 Connecting my API
   Create Session    fakeAPI    ${URL_API}
+  ${HEADERS}        Create Dictionary    content-type=application/json
+  Set Suite Variable    ${HEADERS}
 
 ###Actions
 Request all the books
@@ -33,11 +48,22 @@ Request the book "${BOOK_ID}"
   Set Test Variable    ${ANSWER}
 
 Register a new book
-  ${HEADERS}        Create Dictionary    content-type=application/json
   ${ANSWER}         Post Request    fakeAPI    Books
   #Está nesse formato usando os trÊs pontos, porque na Library Collections o Post Request tem os argumentos opcionais, e respeiam uma ordem de declaração. Declarando assim, podemos declarar somente o que precisamos.
-  ...                               data={"ID": 4215,"Title": "teste","Description": "teste","PageCount": 200,"Excerpt": "teste","PublishDate": "2019-06-28T18:20:13.832Z"}
+  ...                               data={"ID": ${BOOK_201.ID},"Title": "${BOOK_201.Title}","Description": "${BOOK_201.Description}","PageCount": ${BOOK_201.PageCount},"Excerpt": "${BOOK_201.Excerpt}","PublishDate": "${BOOK_201.PublishDate}"}
   ...                               headers=${HEADERS}
+  Log               ${ANSWER.text}
+  Set Test Variable    ${ANSWER}
+
+Change the book "${ID_BOOK}"
+  ${ANSWER}         Put Request     fakeAPI    Books/${ID_BOOK}
+  ...                               data={"ID": ${BOOK_150.ID},"Title": "${BOOK_150.Title}","Description": "${BOOK_150.Description}","PageCount": ${BOOK_150.PageCount},"Excerpt": "${BOOK_150.Excerpt}","PublishDate": "${BOOK_150.PublishDate}"}
+  ...                               headers=${HEADERS}
+  Log               ${ANSWER.text}
+  Set Test Variable    ${ANSWER}
+
+Delete a book "${ID_BOOK}"
+  ${ANSWER}         Delete Request    fakeAPI    Books/${ID_BOOK}
   Log               ${ANSWER.text}
   Set Test Variable    ${ANSWER}
 
@@ -67,5 +93,21 @@ Check if all 15's book data is returned correctly
   Should Not Be Empty               ${ANSWER.json()["PublishDate"]}
   Should Not Be Empty               ${ANSWER.json()["Excerpt"]}
 
-Check if all the book's data are returned correctly
-  Dictionary Should Contain Item    ${ANSWER.json()}    data    value
+Check if all the book's data are returned correctly for the book "${ID_BOOK}"
+  Check book        ${ID_BOOK}
+
+Check if all the data of the book "${ID_BOOK}" is successfully returned
+  Check book        ${ID_BOOK}
+
+Make sure the book "${ID_BOOK}" was been deleted
+#Checa se o Response Body está vazio, provando assim que o livro foi excluido
+  Should Be Empty    ${ANSWER.content}
+
+Check book
+  [Arguments]       ${ID_BOOK}
+  Dictionary Should Contain Item    ${ANSWER.json()}    ID              ${BOOK_${ID_BOOK}.ID}
+  Dictionary Should Contain Item    ${ANSWER.json()}    Title           ${BOOK_${ID_BOOK}.Title}
+  Dictionary Should Contain Item    ${ANSWER.json()}    Description     ${BOOK_${ID_BOOK}.Description}
+  Dictionary Should Contain Item    ${ANSWER.json()}    PageCount       ${BOOK_${ID_BOOK}.PageCount}
+  Dictionary Should Contain Item    ${ANSWER.json()}    Excerpt         ${BOOK_${ID_BOOK}.Excerpt}
+  Dictionary Should Contain Item    ${ANSWER.json()}    PublishDate     ${BOOK_${ID_BOOK}.PublishDate}
